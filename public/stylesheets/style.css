@@ -6,3 +6,30 @@ body {
 a {
   color: #00B7FF;
 }
+
+ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  list-style: none;
+}
+
+#trip-box {
+  padding: 20px;
+  border: 1px solid grey;
+  text-align: center;
+}
+
+div {
+  padding: 5px;
+}
+
+img {
+  width: 400px;
+}
+
+#list-pics {
+  width: 280px;
+}

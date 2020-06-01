@@ -1,0 +1,15 @@
+<%- include('../partials/header.ejs') %>
+
+<form action="/trips" method="POST">
+    <label>Location:</label>
+    <input type="text" name="location"><br>
+    <label>Date:</label>
+    <input type="date" name="date"><br>
+    <label>Picture:</label>
+    <input type="text" name="picture"><br>
+    <label>Trip Length:</label>
+    <input type="number" name="length"><br>
+    <input type="submit" value="Create Trip">
+</form>
+
+<%- include('../partials/footer.ejs') %>

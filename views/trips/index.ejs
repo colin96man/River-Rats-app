@@ -1,0 +1,17 @@
+<%- include('../partials/header.ejs') %>
+
+<ul id="trips-list">
+    <% trips.forEach(function(t) { %>
+    <li id="trip-box">
+        <a href="/trips/<%= t._id %>">
+            <section>
+                <div><%= t.location %></div>
+                <div><img id="list-pics" src="<%= t.picture %>"></div>
+            </section>
+        </a>
+    </li>
+    <% }); %>
+</ul>
+<a href="/trips/new">New Trip</a>
+
+<%- include('../partials/footer.ejs') %>
