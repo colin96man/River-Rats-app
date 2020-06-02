@@ -3,8 +3,8 @@ const Schema = mongoose.Schema;
 
 const mealSchema = new Schema({
     day: Number,
-    type: String,
-    food: String,
+    foodType: String, //breakfast or dinner
+    dish: String, // what the user is signing up to make
     cook: {
         type: Schema.Types.ObjectId,
         ref: 'User'

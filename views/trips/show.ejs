@@ -2,6 +2,7 @@
 
 <img src="<%= trip.picture %>">
 
+<p>Created By: <%= trip.createdBy.name %></p>
 <p><%= trip.date %></p>
 <p><%= trip.length %> Days</p>
 
@@ -12,11 +13,13 @@
 <% if(trip.attendees.length) { %>
     <ul id="attending-list">
         <% trip.attendees.forEach(function(a) { %>
-            <li><%= a.user %></li>
+            <li><%= a.name %></li>
         <% }); %>
     </ul>
 <% } else { %>
     <h5>No Attendees Yet</h5>
 <% } %>
+
+<h3>Meals</h3>
 
 <%- include('../partials/footer.ejs') %>

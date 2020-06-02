@@ -1,5 +1,4 @@
 const Trip = require('../models/tripModel');
-const User = require('../models/userModel');
 const Meal = require('../models/mealModel');
 
 module.exports = {
@@ -10,7 +9,9 @@ module.exports = {
 }
 
 function show(req, res) {
-    Trip.findById(req.params.tripId, function(err, trip) {
+    Trip.findById(req.params.tripId)
+    .populate('attendees')
+    .exec(function(err, trip) { 
         res.render('trips/show', {
             title: `${trip.location} Details`, trip
         });
@@ -18,6 +19,7 @@ function show(req, res) {
 }
 
 function create(req, res) {
+    req.body.createdBy = req.user;
     Trip.create(req.body, function(err, trip) {
         res.redirect('/trips');
     });

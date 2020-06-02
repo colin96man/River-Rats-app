@@ -12,7 +12,8 @@ const tripSchema = new Schema({
     length: Number,
     attendees: [{
         type: Schema.Types.ObjectId,
-        ref: 'User'
+        ref: 'User',
+        unique: true
     }],
     meals: [{
         type: Schema.Types.ObjectId,
