@@ -2,7 +2,9 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const mealSchema = new Schema({
-    day: Number,
+    day: {
+        type: Number, min: 1
+    },
     foodType: String, //breakfast or dinner
     dish: String, // what the user is signing up to make
     cook: {

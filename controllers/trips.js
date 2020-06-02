@@ -11,6 +11,7 @@ module.exports = {
 function show(req, res) {
     Trip.findById(req.params.tripId)
     .populate('attendees')
+    .populate('createdBy', 'name')
     .exec(function(err, trip) { 
         res.render('trips/show', {
             title: `${trip.location} Details`, trip

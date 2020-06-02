@@ -2,7 +2,7 @@
 
 <img src="<%= trip.picture %>">
 
-<p>Created By: <%= trip.name %></p>
+<p>Created By: <%= trip.createdBy.name %></p>
 <p><%= trip.date %></p>
 <p><%= trip.length %> Days</p>
 
@@ -21,8 +21,8 @@
 <% } %>
 
 <h3>Meals</h3>
-<form action="/trips/<%= trip._id %>/meals" method="GET">
-<input type="submit" value="Add Meals">
+<a href="/trips/<%= trip._id %>/meals/new">Add Meals</a><br>
+<br>
 </form>
 <% if(trip.meals.length) { %>
     <table>
