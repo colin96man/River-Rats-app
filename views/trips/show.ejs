@@ -2,7 +2,7 @@
 
 <img src="<%= trip.picture %>">
 
-<p>Created By: <%= trip.createdBy.name %></p>
+<p>Created By: <%= trip.name %></p>
 <p><%= trip.date %></p>
 <p><%= trip.length %> Days</p>
 
@@ -21,5 +21,31 @@
 <% } %>
 
 <h3>Meals</h3>
+<form action="/trips/<%= trip._id %>/meals" method="GET">
+<input type="submit" value="Add Meals">
+</form>
+<% if(trip.meals.length) { %>
+    <table>
+        <thead>
+            <tr>
+                <th>Day</th>
+                <th>Dish</th>
+                <th>Cook</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <% trip.meals.forEach(function(m) { %>
+                    <td><%= m.day %></td>
+                    <td><%= m.foodType %></td>
+                    <td><%= m.dish %></td>
+                    <td><%= m.cook %></td>
+                <% }); %>
+            </tr>
+        </tbody>
+    </table>
+<% } else { %>
+    No meals have been planned yet
+<% } %>    
 
 <%- include('../partials/footer.ejs') %>
