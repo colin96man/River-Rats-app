@@ -11,8 +11,8 @@
 </form>
 <% if(trip.attendees.length) { %>
     <ul id="attending-list">
-        <% trip.attendees.forEach(function(person) { %>
-            <li><%= person.user %></li>
+        <% trip.attendees.forEach(function(a) { %>
+            <li><%= a.user %></li>
         <% }); %>
     </ul>
 <% } else { %>
