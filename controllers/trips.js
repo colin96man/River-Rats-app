@@ -11,8 +11,17 @@ module.exports = {
 function show(req, res) {
     Trip.findById(req.params.tripId)
     .populate('attendees')
-    .populate('createdBy', 'name')
+    .populate('createdBy')
+    // .populate('meals')
+    .populate({
+        path: 'meals',
+        populate: {
+            path: 'cook',
+            model: 'User'
+        }
+    })
     .exec(function(err, trip) { 
+        console.log(trip);
         res.render('trips/show', {
             title: `${trip.location} Details`, trip
         });
