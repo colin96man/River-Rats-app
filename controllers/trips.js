@@ -7,6 +7,13 @@ module.exports = {
     create,
     show,
     getEditForm,
+    update
+}
+
+function update(req, res) {
+    Trip.findByIdAndUpdate(req.params.tripId, req.body, {new: true}, function(err, trip) {
+        res.redirect(`/trips/${trip._id}`);
+    });
 }
 
 function getEditForm(req, res) {
@@ -30,7 +37,6 @@ function show(req, res) {
         }
     })
     .exec(function(err, trip) { 
-        console.log(trip);
         res.render('trips/show', {
             title: `${trip.location} Details`, trip
         });

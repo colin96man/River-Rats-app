@@ -3,7 +3,18 @@ const Trip = require('../models/tripModel');
 
 module.exports = {
     newMeal,
-    create
+    create,
+    getEditForm
+}
+
+function getEditForm(req, res) {
+    Trip.findById(req.params.tripId, function(err, trip) {
+         Meal.find({trip: trip._id}, function(err, meals) {
+             res.render('meals/edit', {
+                 title: `Edit ${trip.location} Meal Plan`, trip, meals
+             });
+         });
+    });
 }
 
 function newMeal(req, res) {

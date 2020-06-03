@@ -1,7 +1,16 @@
 <%- include('../partials/header.ejs') %>
 
-<form action="">
+<form action="/trips/<%= trip._id %>?_method=PUT" method="POST">
     
+    <label>Location:</label>
+    <input type="text" name="location" value="<%= trip.location %>"><br>
+    <label>Picture:</label>
+    <input type="text" name="picture" value="<%= trip.picture %>"><br>
+    <label>Date:</label>
+    <input type="date" name="date" placeholder="<%= trip.date %>"><br>
+    <label>Trip Length (in days):</label>
+    <input type="number" name="length" value="<%= trip.length %>"><br>
+    <input type="submit" value="Update Trip">
 </form>
 
 <%- include('../partials/footer.ejs') %>

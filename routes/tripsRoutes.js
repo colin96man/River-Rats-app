@@ -7,5 +7,6 @@ router.get('/new', tripsCtrl.newTrip);
 router.get('/:tripId', tripsCtrl.show);
 router.post('/', tripsCtrl.create);
 router.get('/:tripId/edit', tripsCtrl.getEditForm);
+router.put('/:tripId', tripsCtrl.update);
 
 module.exports = router;
