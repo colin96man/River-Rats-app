@@ -5,7 +5,16 @@ module.exports = {
     index,
     newTrip,
     create,
-    show
+    show,
+    getEditForm,
+}
+
+function getEditForm(req, res) {
+    Trip.findById(req.params.tripId, function(err, trip) {
+        res.render('trips/edit', {
+            title: `Edit ${trip.location}`, trip
+        });
+    });
 }
 
 function show(req, res) {

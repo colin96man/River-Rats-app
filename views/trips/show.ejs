@@ -1,5 +1,7 @@
 <%- include('../partials/header.ejs') %>
 
+<a href="/trips/<%= trip._id %>/edit">Edit Trip</a><br>
+<br>
 <img src="<%= trip.picture %>">
 
 <p>Created By: <%= trip.createdBy.name %></p>
