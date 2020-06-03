@@ -9,12 +9,11 @@
 </head>
 <body>
   <nav>
-    <a href="/trips">Trips List</a>
+    <a href="/trips">HOME</a>
     <% if (user) { %>
-        <a href="/logout">LOGOUT</a>
+        <a id="log-out" href="/logout">LOGOUT</a>
     <% } else { %>
-        <a href="/auth/google">LOGIN WITH GOOGLE</a>
+        <a id="log-in" href="/auth/google">LOGIN WITH GOOGLE</a>
     <% } %>
   </nav>
   <h1><%= title %></h1>
-<main>

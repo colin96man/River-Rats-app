@@ -1,17 +1,25 @@
 <%- include('../partials/header.ejs') %>
-
-<ul id="trips-list">
-    <% trips.forEach(function(t) { %>
-    <li id="trip-box">
-        <a href="/trips/<%= t._id %>">
-            <section>
-                <div><%= t.location %></div>
-                <div><img id="list-pics" src="<%= t.picture %>"></div>
-            </section>
-        </a>
-    </li>
-    <% }); %>
-</ul>
-<a href="/trips/new">New Trip</a>
-
+<main id="main-page">
+    <section id="left-column">
+        <a id="new-trip-btn" href="/trips/new">New Trip</a>
+    </section>
+    <section id="center-column">
+        <ul id="trips-list">
+            <% trips.forEach(function(t) { %>
+            <li id="trip-box">
+                <a href="/trips/<%= t._id %>">
+                    <section>
+                        <div><%= t.location %></div>
+                        <div><img id="list-pics" src="<%= t.picture %>"></div>
+                    </section>
+                </a>
+            </li>
+            <% }); %>
+        </ul>
+    </section>
+    <section id="right-column">
+        <h3 class="rafting-stuff">Rafting Tips</h3>
+        <p class="rafting-stuff"></p>
+    </section>
+</main>
 <%- include('../partials/footer.ejs') %>
