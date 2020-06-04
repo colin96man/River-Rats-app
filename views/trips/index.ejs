@@ -1,13 +1,13 @@
 <%- include('../partials/header.ejs') %>
 <main id="main-page">
     <section id="left-column">
-        <a id="new-trip-btn" href="/trips/new">New Trip</a>
+        <a id="new-trip-btn" href="/trips/new"><button id="new-btn">New Trip</button></a>
     </section>
     <section id="center-column">
         <ul id="trips-list">
             <% trips.forEach(function(t) { %>
             <li id="trip-box">
-                <a href="/trips/<%= t._id %>">
+                <a id="trip-tag" href="/trips/<%= t._id %>">
                     <section>
                         <div><%= t.location %></div>
                         <div><img id="list-pics" src="<%= t.picture %>"></div>

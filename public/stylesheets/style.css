@@ -1,39 +1,49 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url(https://www.publicdomainpictures.net/pictures/180000/velka/white-water-texture-1466336304ZwI.jpg);
+  background-size: inherit;
 }
 
 #main-page {
   display: grid;
-  grid-template-columns: 25% 50% 25%;
+  grid-template-columns: .5fr 1fr .5fr;
 }
 
-#column-left {
-  grid-column-start: 0;
-  grid-column-end: 1;
-}
-
-#column-center {
+#left-column {
   grid-column-start: 1;
   grid-column-end: 2;
+  display: flex;
 }
 
-#column-right {
+#center-column {
   grid-column-start: 2;
   grid-column-end: 3;
 }
 
+#right-column {
+  grid-column-start:3;
+  grid-column-end: 4;
+}
+
 a {
-  color: #00B7FF;
+  color: fuchsia;
+  text-decoration: none;
 }
 
 #new-trip-btn {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  align-content: center;
-  height: 50vh;
+  margin: auto;
+  text-decoration: none;
+}
+
+#new-btn {
+  padding: 15px;
+  font-size: 15px;
+  background-color: turquoise;
+  border: 1px solid black;
+  border-radius: 10px;
 }
 
 ul {
@@ -43,12 +53,18 @@ ul {
   align-items: center;
   align-content: center;
   list-style: none;
+  padding: 0;
 }
 
 #trip-box {
   padding: 20px;
-  border: 1px solid grey;
+  border: 1px solid black;
   text-align: center;
+  border-radius: 10px;
+}
+
+#trip-tag {
+  color: black;
 }
 
 .rafting-stuff {
