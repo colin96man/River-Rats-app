@@ -4,16 +4,16 @@ const Trip = require('../models/tripModel');
 module.exports = {
     newMeal,
     create,
-    getEditForm
+    deleteMeal
 }
 
-function getEditForm(req, res) {
+function deleteMeal(req, res) {
     Trip.findById(req.params.tripId, function(err, trip) {
-         Meal.find({trip: trip._id}, function(err, meals) {
-             res.render('meals/edit', {
-                 title: `Edit ${trip.location} Meal Plan`, trip, meals
-             });
-         });
+        Meal.findByIdAndRemove(req.params.mealId, function(err, meal) {
+            res.redirect(`/trips/${trip._id}`, {
+                meal: meal._id
+            });
+        });
     });
 }
 

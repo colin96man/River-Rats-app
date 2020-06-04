@@ -14,7 +14,7 @@ require('./config/passport');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const tripsRouter = require('./routes/tripsRoutes');
-const attendeesRouter = require('./routes/attendees');
+const attendeesRouter = require('./routes/attendeesRoutes');
 const mealsRouter = require('./routes/mealsRoutes');
 
 var app = express();
