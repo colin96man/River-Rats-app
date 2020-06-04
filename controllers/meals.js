@@ -10,9 +10,7 @@ module.exports = {
 function deleteMeal(req, res) {
     Trip.findById(req.params.tripId, function(err, trip) {
         Meal.findByIdAndRemove(req.params.mealId, function(err, meal) {
-            res.redirect(`/trips/${trip._id}`, {
-                meal: meal._id
-            });
+            res.redirect(`/trips/${trip._id}`);
         });
     });
 }

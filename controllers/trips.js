@@ -43,7 +43,9 @@ function show(req, res) {
             model: 'User'
         }
     })
-    .exec(function(err, trip) { 
+    .exec(function(err, trip) {
+        const formattedDate = convertDate(trip.date);
+        trip.date = formattedDate;
         res.render('trips/show', {
             title: `${trip.location} Details`, trip
         });
@@ -52,7 +54,9 @@ function show(req, res) {
 
 function create(req, res) {
     req.body.createdBy = req.user;
+    console.log(req.body);
     Trip.create(req.body, function(err, trip) {
+        console.log(trip);
         res.redirect('/trips');
     });
 }
@@ -69,4 +73,20 @@ function index(req, res) {
             title: 'Float Trips', trips
         });
     });
+}
+
+function convertDate(isoDate) {
+    console.log('<------- hitting convert function')
+    const date = new Date(isoDate);
+    const year = date.getFullYear();
+    let month = date.getMonth()+1;
+    let dt = date.getDate()+1;
+    if (dt < 10) {
+        dt = '0' + dt;
+    }
+    if (month < 10) {
+        month = '0' + month;
+    }
+    console.log(month, dt, year);
+    return `${month}/${dt}/${year}`;
 }

@@ -41,16 +41,16 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <% trip.meals.forEach(function(m) { %>
+            <% trip.meals.forEach(function(m) { %>
+                <tr>
                     <td><%= m.day %></td>
                     <td><%= m.foodType %></td>
                     <td><%= m.dish %></td>
                     <td><%= m.cook.name %></td>
-                    <!-- <td><form action="/meals/?_method=DELETE" method="POST">
-                    <input id="delete-meal-btn" type="submit" value="X"></form></td> -->
-                <% }); %>
-            </tr>
+                    <td><form action="/trips/<%= trip._id %>/meals/<%= m._id %>?_method=DELETE" method="POST">
+                    <input id="delete-meal-btn" type="submit" value="X"></form></td>
+                </tr>
+            <% }); %>
         </tbody>
     </table>
 <% } else { %>
