@@ -35,7 +35,6 @@ function show(req, res) {
     Trip.findById(req.params.tripId)
     .populate('attendees')
     .populate('createdBy')
-    // .populate('meals')
     .populate({
         path: 'meals',
         populate: {
@@ -47,14 +46,13 @@ function show(req, res) {
         const formattedDate = convertDate(trip.date);
         trip.date = formattedDate;
         res.render('trips/show', {
-            title: `${trip.location} Details`, trip
+            title: `${trip.location} Details`, trip, user: req.user
         });
     });
 }
 
 function create(req, res) {
     req.body.createdBy = req.user;
-    console.log(req.body);
     Trip.create(req.body, function(err, trip) {
         console.log(trip);
         res.redirect('/trips');
@@ -76,7 +74,6 @@ function index(req, res) {
 }
 
 function convertDate(isoDate) {
-    console.log('<------- hitting convert function')
     const date = new Date(isoDate);
     const year = date.getFullYear();
     let month = date.getMonth()+1;
@@ -87,6 +84,5 @@ function convertDate(isoDate) {
     if (month < 10) {
         month = '0' + month;
     }
-    console.log(month, dt, year);
     return `${month}/${dt}/${year}`;
 }
