@@ -5,6 +5,12 @@ body {
   background-size: inherit;
 }
 
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
 #main-page {
   display: grid;
   grid-template-columns: .5fr 1fr .5fr;
@@ -87,7 +93,13 @@ img {
   width: 280px;
 }
 
-#log-in, #log-out {
+#app-name {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+#home, #log-out, #log-in {
+  margin: 0 10px;
 }
