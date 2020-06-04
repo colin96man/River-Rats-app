@@ -8,5 +8,6 @@ router.get('/:tripId', tripsCtrl.show);
 router.post('/', tripsCtrl.create);
 router.get('/:tripId/edit', tripsCtrl.getEditForm);
 router.put('/:tripId', tripsCtrl.update);
+router.delete('/:tripId', tripsCtrl.deleteTrip);
 
 module.exports = router;

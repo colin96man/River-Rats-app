@@ -7,7 +7,14 @@ module.exports = {
     create,
     show,
     getEditForm,
-    update
+    update,
+    deleteTrip
+}
+
+function deleteTrip(req, res) {
+    Trip.findByIdAndRemove(req.params.tripId, function(err) {
+        res.redirect('/trips');
+    });
 }
 
 function update(req, res) {
