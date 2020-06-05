@@ -11,9 +11,63 @@ nav {
   justify-content: flex-end;
 }
 
+a {
+  color: fuchsia;
+  text-decoration: none;
+}
+
+div {
+  padding: 5px;
+}
+
+img {
+  width: 400px;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  list-style: none;
+  padding: 0;
+}
+
+td {
+  padding: 7px;
+}
+
+.rafting-stuff {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  color: orange;
+  background-color: rgba(0,0,0,.65);
+  width: 150px;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.trip-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,.65);
+  width: 250px;
+  margin: auto;
+  border: 1px solid fuchsia;
+  border-radius: 10px;
+  color: yellow;
+}
+
+
 #main-page {
   display: grid;
-  grid-template-columns: .5fr 1fr .5fr;
+  grid-template-columns: .5fr 1fr .65fr;
 }
 
 #left-column {
@@ -32,9 +86,56 @@ nav {
   grid-column-end: 4;
 }
 
-a {
-  color: fuchsia;
-  text-decoration: none;
+#trip-box {
+  padding: 20px;
+  border: 1px solid black;
+  text-align: center;
+  border-radius: 10px;
+  background-image: url(https://st3.depositphotos.com/1010652/14826/v/450/depositphotos_148267741-stock-illustration-90s-style-seamless-background.jpg);
+}
+
+#trip-tag {
+  font-size: 17px;
+  color: chartreuse;
+  background-color: rgba(0,0,0,.55);
+  width: 175px;
+  margin: auto;
+}
+
+#list-pics {
+  width: 280px;
+}
+
+#app-name {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  font-size: 50px;
+}
+
+#tips-box {
+  background-image: url(https://ak.picdn.net/shutterstock/videos/1016011171/thumb/1.jpg);
+  background-size: cover;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  padding-bottom: 10px;
+}
+
+#home, #log-out, #log-in {
+  margin: 0 10px;
+}
+
+#tips {
+  color: yellow;
+  background-color: rgba(0,0,0,.65);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 215px;
+  margin: auto;
 }
 
 #new-trip-btn {
@@ -52,54 +153,7 @@ a {
   border-radius: 10px;
 }
 
-ul {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  list-style: none;
-  padding: 0;
-}
-
-#trip-box {
-  padding: 20px;
-  border: 1px solid black;
-  text-align: center;
-  border-radius: 10px;
-}
-
-#trip-tag {
-  color: black;
-}
-
-.rafting-stuff {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-}
-
-div {
-  padding: 5px;
-}
-
-img {
-  width: 400px;
-}
-
-#list-pics {
-  width: 280px;
-}
-
-#app-name {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-}
-
-#home, #log-out, #log-in {
-  margin: 0 10px;
+#delete-meal-btn {
+  background-color: red;
+  color: snow;
 }
