@@ -64,6 +64,15 @@ td {
   color: yellow;
 }
 
+.meal-label {
+  background-color: rgba(0,0,0,.65);
+  width: 75px;
+  margin: auto;
+  color: turquoise;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 #main-page {
   display: grid;
@@ -156,4 +165,25 @@ td {
 #delete-meal-btn {
   background-color: red;
   color: snow;
+}
+
+#new-meal-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  background-image: url(https://s3.amazonaws.com/spoonflower/public/design_thumbnails/0603/6801/rpizza_party_pink_shop_thumb.png);
+  width: 250px;
+  height: 250px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+#show-layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
 }

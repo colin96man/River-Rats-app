@@ -1,14 +1,14 @@
 <%- include('../partials/header.ejs') %>
 
 <form id="new-meal-form" action="/trips/<%= tripId %>/meals" method="POST">
-    <label>Day: </label>
+    <label class="meal-label">Day: </label>
     <input type="number" name="day"><br>
-    <label>Meal Type:</label>
+    <label class="meal-label">Meal Type:</label>
     <select name="foodType">
         <option value="Breakfast">Breakfast</option>
         <option value="Dinner">Dinner</option>
     </select><br>
-    <label>Dish:</label>
+    <label class="meal-label">Dish:</label>
     <input type="text" name="dish" placeholder="your dish"><br>
     <input type="submit" value="Add Meal">
 </form>

@@ -6,57 +6,58 @@
     <form action="/trips/<%= trip._id %>?_method=DELETE" method="POST">
     <input type="submit" value="DELETE TRIP">
     </form><br>
-<% } %> 
-<img src="<%= trip.picture %>">
-
-<p>Created By: <%= trip.createdBy.name %></p>
-<p><%= trip.date %></p>
-<p><%= trip.length %> Days</p>
-
-<h3>Attendees</h3>
-<form id="attending-form" method="POST" action="/trips/<%= trip._id %>/attendees">
-<input type="submit" value="Add Me">
-</form>
-<% if(trip.attendees.length) { %>
-    <ul id="attending-list">
-        <% trip.attendees.forEach(function(a) { %>
-            <li><%= a.name %></li>
-        <% }); %>
-    </ul>
-<% } else { %>
-    <h5>No Attendees Yet</h5>
 <% } %>
+<section id="show-layout">
+    <img src="<%= trip.picture %>">
 
-<h3>Meals</h3>
-<a href="/trips/<%= trip._id %>/meals/new">Add Meals</a>
-<br>
-</form>
-<% if(trip.meals.length) { %>
-    <table>
-        <thead>
-            <tr>
-                <th>Day</th>
-                <th>Type</th>
-                <th>Dish</th>
-                <th>Cook</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <% trip.meals.forEach(function(m) { %>
-                <tr>
-                    <td><%= m.day %></td>
-                    <td><%= m.foodType %></td>
-                    <td><%= m.dish %></td>
-                    <td><%= m.cook.name %></td>
-                    <td><form action="/trips/<%= trip._id %>/meals/<%= m._id %>?_method=DELETE" method="POST">
-                    <input id="delete-meal-btn" type="submit" value="X"></form></td>
-                </tr>
+    <p>Created By: <%= trip.createdBy.name %></p>
+    <p><%= trip.date %></p>
+    <p><%= trip.length %> Days</p>
+
+    <h3>Attendees</h3>
+    <form id="attending-form" method="POST" action="/trips/<%= trip._id %>/attendees">
+    <input type="submit" value="Add Me">
+    </form>
+    <% if(trip.attendees.length) { %>
+        <ul id="attending-list">
+            <% trip.attendees.forEach(function(a) { %>
+                <li><%= a.name %></li>
             <% }); %>
-        </tbody>
-    </table>
-<% } else { %>
-    No meals have been planned yet
-<% } %>    
+        </ul>
+    <% } else { %>
+        <h5>No Attendees Yet</h5>
+    <% } %>
 
+    <h3>Meals</h3>
+    <a href="/trips/<%= trip._id %>/meals/new">Add Meals</a>
+    <br>
+    </form>
+    <% if(trip.meals.length) { %>
+        <table>
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Type</th>
+                    <th>Dish</th>
+                    <th>Cook</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% trip.meals.forEach(function(m) { %>
+                    <tr>
+                        <td><%= m.day %></td>
+                        <td><%= m.foodType %></td>
+                        <td><%= m.dish %></td>
+                        <td><%= m.cook.name %></td>
+                        <td><form action="/trips/<%= trip._id %>/meals/<%= m._id %>?_method=DELETE" method="POST">
+                        <input id="delete-meal-btn" type="submit" value="X"></form></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    <% } else { %>
+        No meals have been planned yet
+    <% } %>    
+</section>
 <%- include('../partials/footer.ejs') %>
