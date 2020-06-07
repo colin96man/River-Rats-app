@@ -18,7 +18,8 @@ This app will let users (or rafters) post new float trips, add themselves onto a
 
 ## Getting Started
 
-To start the app click [Here](https://raft-rats.herokuapp.com/)
+To start the app click [Here](https://raft-rats.herokuapp.com/)<br>
+Link to my planngin board [Trello](https://trello.com/b/KLayUIBi/sei-project-2)
 
 ## Next Steps
 * AAU be able to remove yourself from the attendees list
