@@ -13,7 +13,6 @@ This app will let users (rafters) post new float trips, add themselves onto a li
 * ExpressJS
 * MongoDB
 * Mongoose
-* HTML
 * CSS
 * EJS
 
