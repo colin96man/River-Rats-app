@@ -1,7 +1,7 @@
 # Raft-Rats-App
 
 This app is a white water rafting trip planner! I have always wanted to incorporate my love for coding into my love for rafting.
-This app will let users (or rafters) post new float trips, add themselves onto a list of attendees on existing trips and sign up for meals on these trips.
+This app will let users (rafters) post new float trips, add themselves onto a list of attendees for existing trips and sign up for meals on these trips.
 
 ## Screenshots
 
@@ -19,7 +19,7 @@ This app will let users (or rafters) post new float trips, add themselves onto a
 ## Getting Started
 
 To start the app click [Here](https://raft-rats.herokuapp.com/)<br>
-Link to my planngin board [Trello](https://trello.com/b/KLayUIBi/sei-project-2)
+Link to my planning board [Trello](https://trello.com/b/KLayUIBi/sei-project-2)
 
 ## Next Steps
 * AAU be able to remove yourself from the attendees list
