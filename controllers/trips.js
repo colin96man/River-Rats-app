@@ -1,5 +1,6 @@
 const Trip = require('../models/tripModel');
 const Meal = require('../models/mealModel');
+const moment = require('moment');
 
 module.exports = {
     index,
@@ -12,9 +13,12 @@ module.exports = {
 }
 
 function deleteTrip(req, res) {
-    Trip.findByIdAndRemove(req.params.tripId, function(err) {
-        Meal.deleteMany({trip: req.params.tripId}, function(err) {
-            res.redirect('/trips');
+    Trip.findById(req.params.tripId, function(err, trip) {
+        Meal.deleteMany({_id: {$in: trip.meals}}, function(err) {
+            trip.remove(function(err) {
+                console.log(err);
+                res.redirect('/trips');
+            });
         });
     });
 }
@@ -45,8 +49,9 @@ function show(req, res) {
         }
     })
     .exec(function(err, trip) {
-        const formattedDate = convertDate(trip.date);
-        trip.date = formattedDate;
+        // trip.date = moment(trip.date).subtract(10, 'days').calendar();
+        trip.date = moment(trip.date).format("MMM Do YY");
+        console.log(trip.date);
         res.render('trips/show', {
             title: `${trip.location} Details`, trip, user: req.user
         });
@@ -56,7 +61,6 @@ function show(req, res) {
 function create(req, res) {
     req.body.createdBy = req.user;
     Trip.create(req.body, function(err, trip) {
-        console.log(trip);
         res.redirect('/trips');
     });
 }
@@ -75,16 +79,16 @@ function index(req, res) {
     });
 }
 
-function convertDate(isoDate) {
-    const date = new Date(isoDate);
-    const year = date.getFullYear();
-    let month = date.getMonth()+1;
-    let dt = date.getDate();
-    if (dt < 10) {
-        dt = '0' + dt;
-    }
-    if (month < 10) {
-        month = '0' + month;
-    }
-    return `${month}/${dt}/${year}`;
-}
+// function convertDate(isoDate) {
+//     const date = new Date(isoDate);
+//     const year = date.getFullYear();
+//     let month = date.getMonth()+1;
+//     let dt = date.getDate();
+//     if (dt < 10) {
+//         dt = '0' + dt;
+//     }
+//     if (month < 10) {
+//         month = '0' + month;
+//     }
+//     return `${month}/${dt}/${year}`;
+// }
