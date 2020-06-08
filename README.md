@@ -5,7 +5,7 @@ This app will let users (rafters) post new float trips, add themselves onto a li
 
 ## Screenshots
 
-![Imgur](https://i.imgur.com/RVanWNR.png)
+![Imgur](https://i.imgur.com/iI8ZzCl.png)
 
 ## Technologies Used
 
