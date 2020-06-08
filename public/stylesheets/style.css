@@ -98,6 +98,12 @@ td {
   font-size: 25px;
 }
 
+.edit-new-submit {
+  background-color: chartreuse;
+  border-radius: 10px;
+  font-size: 13px;
+}
+
 #main-page {
   display: grid;
   grid-template-columns: .5fr 1fr .65fr;
@@ -212,4 +218,33 @@ td {
   justify-content: center;
   align-items: center;
   margin: auto;
+}
+
+#edit-btn {
+  color: black;
+  background-color: orange;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size: 13px;
+}
+
+#del-trip-btn {
+  color: snow;
+  background-color: red;
+  border-radius: 10px;
+  font-size: 13px;
+}
+
+#addMe-btn {
+  background-color: turquoise;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+#new-meal-btn {
+  background-color: yellow;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size: 15px;
 }

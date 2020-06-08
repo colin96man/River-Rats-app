@@ -1,10 +1,10 @@
 <%- include('../partials/header.ejs') %>
 
 <% if(user.equals(trip.createdBy)) { %> 
-    <a href="/trips/<%= trip._id %>/edit">Edit Trip</a><br>
+    <a href="/trips/<%= trip._id %>/edit"><button id="edit-btn">Edit Trip</button></a><br>
     <br>
     <form action="/trips/<%= trip._id %>?_method=DELETE" method="POST">
-    <input type="submit" value="DELETE TRIP">
+    <input type="submit" value="DELETE TRIP" id="del-trip-btn">
     </form><br>
 <% } %>
 <section id="show-layout">
@@ -17,7 +17,7 @@
         <h3>Attendees</h3>
     </section>
     <form id="attending-form" method="POST" action="/trips/<%= trip._id %>/attendees">
-    <input type="submit" value="Add Me">
+    <input type="submit" value="Add Me" id="addMe-btn">
     </form>
     <% if(trip.attendees.length) { %>
         <ul id="attending-list">
@@ -31,7 +31,7 @@
     <section class="h3-style">
         <h3>Meals</h3>
     </section>
-    <a href="/trips/<%= trip._id %>/meals/new">Add Meals</a>
+    <a href="/trips/<%= trip._id %>/meals/new"><button id="new-meal-btn">Add Meal</button></a>
     <br>
     </form>
     <% if(trip.meals.length) { %>
