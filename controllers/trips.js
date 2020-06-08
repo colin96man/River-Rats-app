@@ -13,7 +13,9 @@ module.exports = {
 
 function deleteTrip(req, res) {
     Trip.findByIdAndRemove(req.params.tripId, function(err) {
-        res.redirect('/trips');
+        Meal.deleteMany({trip: req.params.tripId}, function(err) {
+            res.redirect('/trips');
+        });
     });
 }
 
