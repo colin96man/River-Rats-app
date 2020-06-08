@@ -27,3 +27,4 @@ Link to my planngin board [Trello](https://trello.com/b/KLayUIBi/sei-project-2)
 * Make meals "unique" so that only one person could sign up for a specific time slot
 * Add in a facebook oauth option
 * Find a way to get the time to not show up on the date section in the show view since it is not relevant
+* Style app for mobile screens

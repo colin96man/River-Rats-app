@@ -42,6 +42,12 @@ ul {
   padding: 0;
 }
 
+th {
+  font-family: 'Audiowide', sans-serif;
+  font-size: 17px;
+  text-decoration: underline;
+}
+
 td {
   padding: 7px;
 }
@@ -83,6 +89,12 @@ td {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.h3-style {
+  font-family: 'Audiowide', sans-serif;
+  text-decoration: underline;
+  font-size: 25px;
 }
 
 #main-page {

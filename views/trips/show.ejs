@@ -13,8 +13,9 @@
     <p>Created By: <%= trip.createdBy.name %></p>
     <p><%= trip.date %></p>
     <p><%= trip.length %> Days</p>
-
-    <h3>Attendees</h3>
+    <section class="h3-style">
+        <h3>Attendees</h3>
+    </section>
     <form id="attending-form" method="POST" action="/trips/<%= trip._id %>/attendees">
     <input type="submit" value="Add Me">
     </form>
@@ -27,8 +28,9 @@
     <% } else { %>
         <h5>No Attendees Yet</h5>
     <% } %>
-
-    <h3>Meals</h3>
+    <section class="h3-style">
+        <h3>Meals</h3>
+    </section>
     <a href="/trips/<%= trip._id %>/meals/new">Add Meals</a>
     <br>
     </form>
