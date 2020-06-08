@@ -15,6 +15,7 @@ This app will let users (rafters) post new float trips, add themselves onto a li
 * Mongoose
 * HTML
 * CSS
+* EJS
 
 ## Getting Started
 
@@ -28,3 +29,4 @@ Link to my planning board [Trello](https://trello.com/b/KLayUIBi/sei-project-2)
 * Add in a facebook oauth option
 * Find a way to get the time to not show up on the date section in the show view since it is not relevant
 * Style app for mobile screens
+* Add search function
