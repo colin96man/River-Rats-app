@@ -16,6 +16,14 @@ a {
   text-decoration: none;
 }
 
+h1 {
+  font-family: 'Bungee Shade', sans-serif;
+}
+
+h2 {
+  font-family: 'Monoton', sans-serif;
+}
+
 div {
   padding: 5px;
 }
@@ -44,7 +52,9 @@ td {
   justify-content: center;
   align-items: center;
   align-content: center;
-  color: orange;
+  color: yellow;
+  font-size: 23px;
+  text-decoration: yellow underline;
   background-color: rgba(0,0,0,.65);
   width: 150px;
   margin: auto;
@@ -62,6 +72,7 @@ td {
   border: 1px solid fuchsia;
   border-radius: 10px;
   color: yellow;
+  padding: 10px;
 }
 
 .meal-label {
@@ -106,6 +117,7 @@ td {
 #trip-tag {
   font-size: 17px;
   color: chartreuse;
+  text-decoration: underline;
   background-color: rgba(0,0,0,.55);
   width: 175px;
   margin: auto;
@@ -137,14 +149,15 @@ td {
 }
 
 #tips {
-  color: yellow;
-  background-color: rgba(0,0,0,.65);
+  color: rgb(255, 180, 41);
+  background-color: rgba(0,0,0,.75);
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   width: 215px;
   margin: auto;
+  text-align: center;
 }
 
 #new-trip-btn {
