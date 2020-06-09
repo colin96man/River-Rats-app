@@ -49,7 +49,6 @@ function show(req, res) {
         }
     })
     .exec(function(err, trip) {
-        // trip.date = moment(trip.date).subtract(10, 'days').calendar();
         trip.date = moment(trip.date).format("MMM Do YY");
         console.log(trip.date);
         res.render('trips/show', {
@@ -78,17 +77,3 @@ function index(req, res) {
         });
     });
 }
-
-// function convertDate(isoDate) {
-//     const date = new Date(isoDate);
-//     const year = date.getFullYear();
-//     let month = date.getMonth()+1;
-//     let dt = date.getDate();
-//     if (dt < 10) {
-//         dt = '0' + dt;
-//     }
-//     if (month < 10) {
-//         month = '0' + month;
-//     }
-//     return `${month}/${dt}/${year}`;
-// }
