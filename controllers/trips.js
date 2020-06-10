@@ -50,7 +50,6 @@ function show(req, res) {
     })
     .exec(function(err, trip) {
         trip.date = moment(trip.date).format("MMM Do YY");
-        console.log(trip.date);
         res.render('trips/show', {
             title: `${trip.location} Details`, trip, user: req.user
         });
