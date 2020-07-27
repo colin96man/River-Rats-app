@@ -17,7 +17,7 @@
         <h3>Attendees</h3>
     </section>
     <form id="attending-form" method="POST" action="/trips/<%= trip._id %>/attendees">
-    <input type="submit" value="Add Me" id="addMe-btn">
+    <input type="submit" value="Add Me" id="addMe-btn" disabled="<% trip.attendees.includes(user) ? true : false %>">
     </form>
     <% if(trip.attendees.length) { %>
         <ul id="attending-list">
